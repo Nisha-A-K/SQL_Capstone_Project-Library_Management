@@ -194,8 +194,8 @@ on e.branch_number = b.branch_no and emp_position = 'Manager';
 UPDATE books SET Rental_price = 30 WHERE isbn in ('978-0-307-58837-1','978-0-141-44171-6','978-0-7432-7357-1');
 
 # 12. Display the names of customers who have issued books with a rental price higher than Rs. 25.
-Select C.Customer_Name from customer c 
+Select C.Customer_Name, b.Rental_Price   from customer c 
  join  issuestatus i
 on c.Customer_id = I.issued_cust 
-join  books b on I.isbn_book= b.isbn and rental_price>25;
+join  books b on I.isbn_book= b.isbn and b.rental_price>25;
 
